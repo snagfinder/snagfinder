@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snag Finder</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- NAV BAR -->
+<nav>
+  <div class="title">Snag Finder</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="submit.html">Submit BBQ</a>
+    <a href="about.html">About</a> <!-- New Link -->
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+  <!-- MAIN LAYOUT -->
+  <div class="container">
+
+    <!-- MAP -->
+    <div id="map"></div>
+
+    <!-- SIDEBAR -->
+    <div id="sidebar">
+      <h2>BBQs This Weekend</h2>
+
+      <!-- SEARCH BAR -->
+      <div id="search-container">
+        <input 
+          type="text" 
+          id="search-input" 
+          placeholder="Search suburb, postcode, or event..."
+          oninput="searchBBQs()"
+        >
+      </div>
+
+      <!-- STATE BUTTONS -->
+    <div class="state-buttons">
+  <button onclick="resetMap()" style="background: #cf2e2e; color: white; border: none;">All Aus</button>
+  <button onclick="filterByState('NSW')">NSW</button>
+  <button onclick="filterByState('VIC')">VIC</button>
+  <button onclick="filterByState('QLD')">QLD</button>
+  <button onclick="filterByState('SA')">SA</button>
+  <button onclick="filterByState('WA')">WA</button>
+  <button onclick="filterByState('TAS')">TAS</button>
+  <button onclick="filterByState('NT')">NT</button>
+  <button onclick="filterByState('ACT')">ACT</button>
+</div>
+
+      <!-- BBQ LIST -->
+      <ul id="bbq-list"></ul>
+    </div>
+
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Your JS files -->
+   <script src="js/data.js"></script>
+   <script src="js/map.js"></script>
+
+</body>
+</html>
