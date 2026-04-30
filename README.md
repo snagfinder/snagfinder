@@ -7,12 +7,10 @@
 ## Purpose of the website
 - Promote community BBQs held at Bunnings
 - Audience - people seeking a snag
-
-## Background Currently the information is static. This means that someone will
+-  Background Currently the information is static. This means that someone will
 "submit a bbq" and this information will be put into the map manually. In the
 future I would like to automate this better.
-
-## Progress I have developed this basic website using Copilot and Google AI
+-  Progress I have developed this basic website using Copilot and Google AI
 Studio. I would like some feedback on the current functionality and any tips
 for improvement. This is a bit of a hobby project for me and I fully appreciate
 your time and experience to improve this.
