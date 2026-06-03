@@ -53,12 +53,18 @@ function updateMap(stateFilter = null, searchTerm = "") {
             }
             popupContent += `</div>`;
             marker.bindPopup(popupContent);
+            marker.on("click", () => {
+                map.setView([store.lat, store.lng], 15)
+            });
 
             if (event && listElement) {
                 const li = document.createElement('li');
                 li.className = 'bbq-item';
                 li.innerHTML = `<h3><strong>(${store.state})</strong> ${store.name}</h3><p class="org-name">${event.organization}</p><p><small>⏰ ${event.time}</small></p>`;
-                li.onclick = () => { map.setView([store.lat, store.lng], 15); marker.openPopup(); };
+                li.onclick = () => {
+                    map.setView([store.lat, store.lng], 15);
+                    marker.openPopup();
+                };
                 listElement.appendChild(li);
             }
         }
