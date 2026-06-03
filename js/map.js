@@ -1,5 +1,5 @@
 // Initial Map Setup
-const map = L.map('map').setView([-28.2744, 133.7751], 4);
+const map = L.map('map').setView([-28.2744, 133.7751], 5);
 
 // 🗺️ SWITCH TO CARTODB TILES (Fixes the "Access Blocked" error)
 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
