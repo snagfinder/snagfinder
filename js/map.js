@@ -58,7 +58,7 @@ async function updateMap(stateFilter = null, searchTerm = "") {
 			name: storeRaw[0],
 			state: storeRaw[1],
 			suburb: storeRaw[2],
-			postcode: `${storeRaw[3]}`,
+			postcode: `${storeRaw[3]}`.padStart(4, "0"),
 			lat: storeRaw[4],
 			lng: storeRaw[5],
 		};
@@ -76,7 +76,7 @@ async function updateMap(stateFilter = null, searchTerm = "") {
 				icon: event ? snagIcon : storeIcon,
 			}).addTo(markerGroup);
 			// See ya! :)
-			let popupContent = `<div style="text-align:center"><strong>${store.name}</strong><br>`;
+			let popupContent = `<div style="text-align:center"><strong>Bunnings ${store.name}, ${store.postcode}</strong><br>`;
 			if (event) {
 				popupContent += `<span style="color:#0d5c3d">🌭 ${event.organization}</span><br><small>${event.time}</small>`;
 			} else {
