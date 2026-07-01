@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="css/styles.css">
   <title>Contact - Snag Finder</title>
   <style>
     .page-content { max-width: 600px; margin: 50px auto; padding: 20px; }
-    h1 { color: #0d5c3d; }
+    h1 { color: #0d5c3d;
+    font-size: 2em;
+    font-weight: bold; }
   </style>
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
@@ -21,7 +24,56 @@
   </nav>
   <div class="page-content">
     <h1>Contact Us</h1>
-   <p>Got questions or suggestions? Email us at: <a href="mailto:snagfinder@gmail.com"><strong>snagfinder@gmail.com</strong></a></p>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      label {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      
+      }
+      input,textarea,button {
+        width: 100%;
+        border: 1px solid;
+      }
+    </style>
+    <form method="POST">
+      <p>Got questions or suggestions?</p>
+      <label>
+        Name*
+        <input name="name" required>
+      </label>
+      <label>
+        Email
+        <input name="email">
+      </label>
+      <label>
+        Message*
+        <textarea name="message" required></textarea>
+      </label>
+      <button type="submit">
+        Send
+      </button>
+      <!-- <div
+        class="cf-turnstile"
+        data-sitekey="1x00000000000000000000AA"
+        data-callback="onSuccess"
+      ></div>
+      <script>
+        function onSuccess(event) {
+          console.log(event)
+        }
+      </script> -->
+    </form>
   </div>
+  <!-- <script
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+    async
+    defer
+  ></script> -->
 </body>
 </html>

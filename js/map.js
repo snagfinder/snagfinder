@@ -44,7 +44,7 @@ function updateMap(stateFilter = null, searchTerm = "") {
             const marker = L.marker([store.lat, store.lng], {
                 icon: event ? snagIcon : storeIcon
             }).addTo(markerGroup);
-
+            // See ya! :)
             let popupContent = `<div style="text-align:center"><strong>${store.name}</strong><br>`;
             if (event) {
                 popupContent += `<span style="color:#0d5c3d">🌭 ${event.organization}</span><br><small>${event.time}</small>`;
