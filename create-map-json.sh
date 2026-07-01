@@ -11,4 +11,4 @@ cat bunnings.json \
 		.geoPoint.latitude,
 		.geoPoint.longitude
 		])]' \
-	> map.json
+	> ./public/map.json

@@ -1,5 +1,9 @@
 {
 	"name": "snagfinder",
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"preview": "wrangler dev"
+	},
 	"devDependencies": {
 		"wrangler": "^4.105.0"
 	},
