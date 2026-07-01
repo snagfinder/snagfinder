@@ -37,8 +37,13 @@ const stateCenters = {
 	ACT: { lat: -35.2809, lng: 149.13, zoom: 13 },
 };
 
+const bbqEvents = [];
+const storesPromise = fetch("/map.json").then((response) => response.json());
+
 // ADDED THE 'function' KEYWORD HERE
-function updateMap(stateFilter = null, searchTerm = "") {
+async function updateMap(stateFilter = null, searchTerm = "") {
+	const stores = await storesPromise;
+
 	markerGroup.clearLayers();
 	const listElement = document.getElementById("bbq-list");
 	if (listElement) {
@@ -48,7 +53,16 @@ function updateMap(stateFilter = null, searchTerm = "") {
 	const term = searchTerm.toLowerCase().trim();
 	const matchingCoords = [];
 
-	bunningsStores.forEach((store) => {
+	stores.forEach((storeRaw) => {
+		const store = {
+			name: storeRaw[0],
+			state: storeRaw[1],
+			suburb: storeRaw[2],
+			postcode: `${storeRaw[3]}`,
+			lat: storeRaw[4],
+			lng: storeRaw[5],
+		};
+
 		const matchesState = stateFilter ? store.state === stateFilter : true;
 		const matchesSearch =
 			store.name.toLowerCase().includes(term) ||
