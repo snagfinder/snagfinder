@@ -6,6 +6,8 @@ cat bunnings.json \
 	| jq -c '[(.data.pointOfServices[] | [
 		.displayName,
 		.address.region.isocode,
+		.address.town,
+		(.address.postalCode | tonumber),
 		.geoPoint.latitude,
 		.geoPoint.longitude
 		])]' \
