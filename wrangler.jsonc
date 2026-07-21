@@ -1,7 +1,11 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "snagfinder",
-	"compatibility_date": "2026-07-01",
-	"observability": { "enabled": true },
-	"assets": { "directory": "public" }
+	"compatibility_date": "2026-07-20",
+	"observability": {
+		"enabled": true
+	}
+	"assets": {
+		"directory": "public"
+	}
 }
